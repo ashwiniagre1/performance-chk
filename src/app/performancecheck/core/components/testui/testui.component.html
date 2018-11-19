@@ -1,0 +1,25 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        testui
+    </amexio-header>
+    <amexio-body>
+        <amexio-radio-group [field-label]="'Gender'" [(ngModel)]="testmodel.gender" name="testmodel.gender" [data-reader]="'data'" [display-field]="'gender'" [value-field]="'genderId'" [data]="gender_Data" [horizontal]="true" (onSelection)="onSelection_gender($event)">
+        </amexio-radio-group>
+        <amexio-text-input [field-label]="'test'" [(ngModel)]="testmodel.test" name="testmodel.test" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+        </amexio-text-input>
+
+    </amexio-body>
+
+    <amexio-action>
+
+    </amexio-action>
+</amexio-card>
+<amexio-notification [data]="successMsgData" [vertical-position]="'top'" [horizontal-position]="'right'" [close-on-escape]="true" [background-color]="'green'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="4000">
+    <ng-template #amexioNotificationTemplates let-row="row">
+        <amexio-box>
+            <amexio-image [icon-class]="'fa fa-check'">
+            </amexio-image> &nbsp;&nbsp;
+            <amexio-label size="small-bold" font-color="black">{{row}}</amexio-label>
+        </amexio-box>
+    </ng-template>
+</amexio-notification>

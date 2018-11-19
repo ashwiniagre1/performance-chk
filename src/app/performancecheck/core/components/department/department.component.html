@@ -1,0 +1,37 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Department
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="12">
+                <amexio-text-input [field-label]="'Dept Id'" [(ngModel)]="department.id" name="department.id" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+        <amexio-row>
+            <amexio-column size="12">
+                <amexio-text-input [field-label]="'Name'" [(ngModel)]="department.name" name="department.name" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+
+    </amexio-body>
+
+    <amexio-action>
+        <amexio-button [label]="'Save'" [icon]="'fa fa-save fa 2x'" [type]="'theme-color'" [tooltip]="'save'" [size]="'default'" [form-bind]="'save'" (onClick)="onClick_save($event)">
+        </amexio-button>
+
+    </amexio-action>
+</amexio-card>
+<amexio-notification [data]="successMsgData" [vertical-position]="'top'" [horizontal-position]="'right'" [close-on-escape]="true" [background-color]="'green'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="4000">
+    <ng-template #amexioNotificationTemplates let-row="row">
+        <amexio-box>
+            <amexio-image [icon-class]="'fa fa-check'">
+            </amexio-image> &nbsp;&nbsp;
+            <amexio-label size="small-bold" font-color="black">{{row}}</amexio-label>
+        </amexio-box>
+    </ng-template>
+</amexio-notification>
