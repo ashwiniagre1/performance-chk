@@ -1,0 +1,33 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Login
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="testmodelone.countryid" name="testmodelone.countryid" [search]="true" [field-label]="'country'" [http-url]="'https://restapi.amexio.org:8991/rest-sample-app/api/country/findall'" [http-method]="'get'" [display-field]="'countryName'"
+                    [value-field]="'id'" (onSingleSelect)="onSingleSelect_countryid($event)">
+                </amexio-dropdown>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-dropdown [(ngModel)]="testmodelone.stateId" name="testmodelone.stateId" [search]="true" [field-label]="'State'" [data]="stateId_Data" [display-field]="'stateName'" [value-field]="'stateId'">
+                </amexio-dropdown>
+            </amexio-column>
+        </amexio-row>
+
+
+    </amexio-body>
+
+    <amexio-action>
+
+    </amexio-action>
+</amexio-card>
+<amexio-notification [data]="successMsgData" [vertical-position]="'top'" [horizontal-position]="'right'" [close-on-escape]="true" [background-color]="'green'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="4000">
+    <ng-template #amexioNotificationTemplates let-row="row">
+        <amexio-box>
+            <amexio-image [icon-class]="'fa fa-check'">
+            </amexio-image> &nbsp;&nbsp;
+            <amexio-label size="small-bold" font-color="black">{{row}}</amexio-label>
+        </amexio-box>
+    </ng-template>
+</amexio-notification>
